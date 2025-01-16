@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجهة دردشة</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="لوغو" style="height: 50px;">
+        <i class="fas fa-user" title="البروفايل" onclick="window.location.href='chat'"></i>
+        <i class="fas fa-comments" title="الدردشة" onclick="window.location.href='chat'"></i>
+        <i class="fas fa-language" title="الترجمة" onclick="window.location.href='translate'"></i>
+        <i class="fas fa-sign-in-alt" title="تسجيل الدخول" onclick="window.location.href='login'"></i>
+        <i class="fas fa-sign-out-alt" title="تسجيل الخروج" onclick="window.location.href='chat'"></i>
+        <i class="fas fa-user-plus" title="تسجيل مستخدم جديد" onclick="window.location.href='register'"></i>
+    </div>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <div id="user-input">
+            <input type="text" id="input" placeholder="اكتب رسالتك هنا..." />
+            <button onclick="sendMessage()">إرسال</button>
+        </div>
+        <ul id="chat-history" style="display: none;"></ul> <!-- إخفاء chat-history -->
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

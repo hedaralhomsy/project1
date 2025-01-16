@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>تسجيل مستخدم جديد</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register-styles.css') }}">
+</head>
+<body>
+    <div id="header">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="لوغو" style="height: 50px;">
+
+        <!-- الشريط الجانبي بدون أزرار -->
+    </div>
+    <div id="register-container">
+        <h2>تسجيل مستخدم جديد</h2>
+        <form id="register-form" method="post" action="/register">
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required><br>
+            <input type="submit" value="تسجيل">
+        </form>
+    </div>
+</body>
+</html>
