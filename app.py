@@ -10,7 +10,7 @@ APP = app
 # صفحات الموقع
 @APP.route("/")
 def home():
-    return render_template("chat.html")
+    return render_template("index.html")
 
 @APP.route("/register", methods=["GET", "POST"])
 def register():
@@ -37,13 +37,13 @@ def login():
             return redirect(url_for("chat"))
         else:
             return "بيانات الدخول غير صحيحة، حاول مرة أخرى"
-    return render_template("login.html")
+    return render_template("index.html")
 
 @APP.route("/chat")
 def chat():
     if not session.get('logged_in'):
         return redirect(url_for("login"))  # إعادة توجيه المستخدمين غير المسجلين إلى صفحة تسجيل الدخول
-    return render_template("chat.html")
+    return render_template("index.html")
 
 @APP.route("/send_message", methods=["POST"])
 def send_message():
