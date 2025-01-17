@@ -34,7 +34,7 @@ def login():
             session['logged_in'] = True
             session['email'] = email
             session.pop('message_count', None)  # إعادة تعيين عدد الرسائل عند تسجيل الدخول
-            return redirect(url_for("chat"))
+            return redirect(url_for("index"))
         else:
             return "بيانات الدخول غير صحيحة، حاول مرة أخرى"
     return render_template("index.html")
