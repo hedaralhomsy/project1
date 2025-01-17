@@ -39,7 +39,7 @@ def login():
             return "بيانات الدخول غير صحيحة، حاول مرة أخرى"
     return render_template("index.html")
 
-@APP.route("/chat")
+@APP.route("/index")
 def chat():
     if not session.get('logged_in'):
         return redirect(url_for("login"))  # إعادة توجيه المستخدمين غير المسجلين إلى صفحة تسجيل الدخول
